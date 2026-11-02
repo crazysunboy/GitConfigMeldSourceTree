@@ -1,0 +1,66 @@
+[user]
+	email = crazysunboy@yahoo.com
+	name = Sundeep Kumar
+[core]
+	autocrlf = true
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+    # Set VS Code as the default editor. --wait forces terminal to pause until file closes.
+    editor = code --wait
+    # Performance & standard settings
+	autocrlf = true
+    fscache = true
+    preloadindex = true
+	excludesfile = C:\\Users\\conta\\OneDrive\\Documents\\gitignore_global.txt
+[diff]
+    # Use Meld as the default diff tool
+    tool = meld
+[difftool]
+    # Do not prompt every time you run `git difftool`
+    prompt = false
+[difftool "meld"]
+    # --diff allows Meld to perform a standard two-way file comparison
+    cmd = 'C:/Users/conta/AppData/Local/Programs/Meld/meld.exe' --label=\"LOCAL $LOCAL ($LOCAL_REV)\" $LOCAL --label=\"REMOTE $REMOTE ($REMOTE_REV)\" $REMOTE
+[merge]
+    # Use Meld as the default merge tool
+    tool = meld
+    # Choose standard or diff3 syntax layout inside file conflict markers (if tool fails)
+    # conflictstyle = diff3
+[mergetool]
+    # Do not prompt every time you run `git mergetool`
+    prompt = false
+    # Crucial: Automatically delete the original .orig backup files after a successful merge
+    keepBackup = false
+[mergetool "meld"]
+    # Best-practice 3-way layout: Left (Local), Middle (Merged output), Right (Remote)
+    # --auto-merge tries to pre-resolve conflicts it safely can
+    cmd = 'C:/Users/conta/AppData/Local/Programs/Meld/meld.exe' $LOCAL $MERGED $REMOTE --output=$MERGED
+[pull]
+    # Ensures `git pull` maintains clean, linear history via fast-forward only
+    ff = only
+[push]
+    # Automatically pushes branches to remotes with matching names without extra typing
+    default = simple
+    autoSetupRemote = true
+
+#[rerere]
+    # Reuse Recorded Resolution: Remembers how you fixed a conflict and auto-applies it if seen again
+#    enabled = true
+#    autoupdate = true
+[color]
+    ui = auto
+[alias]
+    # Helpful production shorthand productivity commands
+    st = status -sb
+    co = checkout
+    br = branch
+    ci = commit
+    lg = log --oneline --graph --decorate
+[difftool "sourcetree"]
+	cmd = 'C:/Users/conta/AppData/Local/Programs/Meld/meld.exe' --label=\"LOCAL $LOCAL ($LOCAL_REV)\" $LOCAL --label=\"REMOTE $REMOTE ($REMOTE_REV)\" $REMOTE
+[mergetool "sourcetree"]
+	cmd = 'C:/Users/conta/AppData/Local/Programs/Meld/meld.exe' $LOCAL $MERGED $REMOTE --output=$MERGED
+	trustExitCode = false
+	keepBackup = false
+[http]
+	sslBackend = schannel
+	sslVerify = true
